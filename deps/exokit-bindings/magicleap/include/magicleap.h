@@ -210,7 +210,7 @@ class MLImageTracker : public ObjectWrap {
 public:
   static Local<Function> Initialize(Isolate *isolate);
 
-  MLImageTracker(MLHandle trackerHandle, float size[2]);
+  MLImageTracker(MLHandle trackerHandle, float size);
   ~MLImageTracker();
 
   static NAN_METHOD(New);
@@ -222,7 +222,7 @@ public:
 
 // protected:
   MLHandle trackerHandle;
-  float size[2];
+  float size;
   Nan::Persistent<Function> cb;
   MLTransform transform;
   bool valid;
